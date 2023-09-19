@@ -4,4 +4,4 @@ Resources:
   CreatingS3:
     Type: 'AWS::S3::Bucket'
     Properties:
-      BucketName: testtesttest8289
+      BucketName: testtesttest8289pipeline
