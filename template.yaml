@@ -1,7 +1,30 @@
 AWSTemplateFormatVersion: 2010-09-09
 
+# Resources:
+#   CreatingS3:
+#     Type: 'AWS::S3::Bucket'
+#     Properties:
+#       BucketName: testtesttest8289pipeline
+
 Resources:
-  CreatingS3:
-    Type: 'AWS::S3::Bucket'
+  CreatingECR:
+    Type: 'AWS::ECR::Repository'
     Properties:
-      BucketName: testtesttest8289pipeline
+      RepositoryName: bhuvirepo 
+      # RepositoryPolicyText: Json-----------> Need to study
+      # EmptyOnDelete: false-----------------> Facing error
+      ImageTagMutability: MUTABLE
+      ImageScanningConfiguration: 
+        ScanOnPush: true    
+      # EncryptionConfiguration: ------------> Need to study 
+      # LifecyclePolicy: --------------------> Need to study
+      Tags:
+        - Key: owner
+          Value: bhuvanesh
+        - Key: owner2
+          Value: also me
+Outputs:
+  RepoName: 
+    Value: !Ref CreatingECR
+  Arn:
+    Value: !GetAtt CreatingECR.Arn
