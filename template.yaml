@@ -10,7 +10,7 @@ Resources:
   CreatingECR:
     Type: 'AWS::ECR::Repository'
     Properties:
-      RepositoryName: bhuvirepo 
+      RepositoryName: bhuvirepos 
       # RepositoryPolicyText: Json-----------> Need to study
       # EmptyOnDelete: false-----------------> Facing error
       ImageTagMutability: MUTABLE
